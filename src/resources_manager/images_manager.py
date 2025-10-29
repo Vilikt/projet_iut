@@ -3,9 +3,9 @@ from pathlib import Path
 import pygame
 from pygame import Surface
 
-from commons import singleton, COLOR_TRANSPARENCY
-from resources_manager import FOLDER_IMAGES
-from resources_manager.resources_manager import ResourcesManager
+from src.commons import singleton, COLOR_TRANSPARENCY
+from src.resources_manager.locals import FOLDER_IMAGES
+from src.resources_manager.resources_manager import ResourcesManager
 
 
 @singleton

@@ -1,9 +1,0 @@
-from pathlib import Path
-
-FOLDER_ASSETS = Path("assets")
-FOLDER_IMAGES = FOLDER_ASSETS / "images"
-FOLDER_ANIMATIONS = FOLDER_IMAGES / "animations"
-FOLDER_FONTS = FOLDER_ASSETS / "fonts"
-FOLDER_MUSICS = FOLDER_ASSETS / "musics"
-FOLDER_SOUNDS = FOLDER_ASSETS / "sound_effects"
-FOLDER_LEVELS = FOLDER_ASSETS / "levels"

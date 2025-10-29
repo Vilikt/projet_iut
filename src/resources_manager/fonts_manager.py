@@ -1,9 +1,9 @@
 from pygame import Surface
 from pygame.freetype import Font
 
-from commons import singleton, COLOR_WHITE, FONT_SIZE
-from locals import FOLDER_FONTS
-from resources_manager.resources_manager import ResourcesManager
+from src.commons import singleton, COLOR_WHITE, FONT_SIZE
+from src.resources_manager.locals import FOLDER_FONTS
+from src.resources_manager.resources_manager import ResourcesManager
 
 
 DEFAULT_NAME = "smb"
