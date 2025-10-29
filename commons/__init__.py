@@ -6,11 +6,14 @@ ROOT = Path("./")
 
 FPS = 60
 
+FONT_SIZE = 8
+
 SCREEN_WIDTH = 256
 SCREEN_HEIGHT = 240
 
 COLOR_BLACK = Color(0, 0, 0)
 COLOR_WHITE = Color(255, 255, 255)
+COLOR_TRANSPARENCY = Color(255, 0, 255)
 
 
 def singleton(cls):
