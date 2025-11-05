@@ -1,7 +1,7 @@
 import pygame
 from pygame import Surface, K_RETURN
 
-from player import Player
+from src.entities.player import Player
 from src.commons import singleton, COLOR_BLACK
 from src.gamestates.gamestate import GameState
 from src.gamestates import GameStateName
