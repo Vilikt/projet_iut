@@ -1,11 +1,12 @@
 from abc import ABC, abstractmethod
 
 from pygame import Surface
+from pygame.event import Event
 
 
 class GameLoopInterface(ABC):
     @abstractmethod
-    def handle_events(self):
+    def handle_events(self, event: Event):
         pass
 
     @abstractmethod

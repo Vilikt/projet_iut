@@ -2,18 +2,20 @@ import pygame
 from pygame.locals import *
 from pygame.time import Clock
 
-from src.commons import COLOR_BLACK, SCREEN_HEIGHT, SCREEN_WIDTH, FPS
+from src.commons import COLOR_BLACK, FPS
+from src.game.display import Display
 from src.gamestates import GameStateName
-from src.gamestates.gamestate_manager import GameStateManager
+
 
 
 class Game:
     def __init__(self):
         self.__running = False
+        self.__display = Display(self)
         self.__clock = Clock()
         self.__delta = 0
-        self.__screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+        from src.gamestates.gamestate_manager import GameStateManager
         self.state_manager = GameStateManager()
         self.state_manager.current_state = GameStateName.TITLE
 
@@ -33,16 +35,16 @@ class Game:
             if event.type == QUIT or keys_pressed[K_ESCAPE]:
                 self.__running = False
 
-        self.state_manager.current_state.handle_events()
+            self.state_manager.current_state.handle_events(event)
 
     def __update(self):
         self.__delta = self.__clock.tick(FPS)
         self.state_manager.current_state.update_dt(self.__delta)
 
     def __draw(self):
-        self.__screen.fill(COLOR_BLACK)
+        self.__display.screen.fill(COLOR_BLACK)
         self.state_manager.current_state.render()
-        self.__screen.blit(self.state_manager.current_state.get_surface(), (0, 0))
+        self.__display.screen.blit(self.__display.resize_gamestate_surface(), (0, 0))
         pygame.display.flip()
 
     def loop(self):

@@ -1,6 +1,7 @@
 from src.gamestates import GameStateName
 from src.gamestates.gamestate import GameState
 from src.gamestates.gamestate_main import GameStateMain
+from src.gamestates.gamestate_options import GameStateOptions
 from src.gamestates.gamestate_title import GameStateTitle
 
 
@@ -8,6 +9,7 @@ class GameStateManager:
     def __init__(self):
         self._title = GameStateTitle(self)
         self._main = GameStateMain(self)
+        self._options = GameStateOptions(self)
         self.__current_state = None
 
     @property
