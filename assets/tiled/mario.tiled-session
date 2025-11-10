@@ -1,0 +1,108 @@
+{
+    "activeFile": "D:/Dev/python/mario_udemy/assets/levels/1-1.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Tous les Fichiers (*)",
+    "fileStates": {
+        "D:/Dev/python/awakening-crawler/res/level/Dungeons.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Dev/python/awakening-crawler/res/level/Sprites.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Dev/python/awakening-crawler/res/level/screen_test.tmx": {
+            "expandedGroupLayers": [
+                18,
+                16
+            ],
+            "scale": 7.43078125,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 160.01009315137628,
+                "y": 112.03398027630003
+            }
+        },
+        "D:/Dev/python/mario_udemy/assets/levels/1-1.tmx": {
+            "scale": 2,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 289.5,
+                "y": 42.5
+            }
+        },
+        "D:/Dev/python/mario_udemy/assets/levels/overworld - complete.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "D:/Dev/python/mario_udemy/assets/levels/underground - complete.tsx": {
+            "scaleInDock": 5.5,
+            "scaleInEditor": 5.5
+        },
+        "D:/Dev/python/mario_udemy/raw_assets/Mario/Next/worlds/tmx/W11.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 3481.5,
+                "y": 820.5
+            }
+        },
+        "D:/Dev/python/mario_udemy/raw_assets/Mario/Next/worlds/tmx/tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "tileset/overworld - coins.tsx": {
+            "scaleInDock": 8,
+            "scaleInEditor": 23
+        },
+        "tileset/overworld - complete.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "tileset/overworld - ground & stones.tsx": {
+            "scaleInDock": 4,
+            "scaleInEditor": 1
+        },
+        "tileset/overworld - pipes & scenery.tsx": {
+            "scaleInDock": 5.5,
+            "scaleInEditor": 1
+        },
+        "tileset/overworld - water & sky.tsx": {
+            "scaleInDock": 8,
+            "scaleInEditor": 1
+        },
+        "tileset/overworld.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 16
+        },
+        "world/1-1.tmx": {
+            "scale": 2,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 260,
+                "y": 124.25
+            }
+        }
+    },
+    "frame.defaultDuration": 200,
+    "last.imagePath": "D:/Dev/python/mario_udemy/assets/levels",
+    "openFiles": [
+        "D:/Dev/python/mario_udemy/assets/levels/1-1.tmx",
+        "D:/Dev/python/mario_udemy/assets/levels/overworld - complete.tsx"
+    ],
+    "project": "mario.tiled-project",
+    "property.type": "string",
+    "recentFiles": [
+        "D:/Dev/python/mario_udemy/assets/levels/overworld - complete.tsx",
+        "D:/Dev/python/mario_udemy/assets/levels/1-1.tmx",
+        "D:/Dev/python/mario_udemy/assets/levels/underground - complete.tsx",
+        "tileset/overworld - complete.tsx",
+        "world/1-1.tmx",
+        "tileset/overworld - pipes & scenery.tsx",
+        "tileset/overworld - ground & stones.tsx",
+        "tileset/overworld - coins.tsx",
+        "D:/Dev/python/awakening-crawler/res/level/screen_test.tmx",
+        "tileset/overworld - water & sky.tsx",
+        "tileset/overworld.tsx",
+        "D:/Dev/python/mario_udemy/raw_assets/Mario/Next/worlds/tmx/W11.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}

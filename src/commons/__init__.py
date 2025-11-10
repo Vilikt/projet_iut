@@ -1,3 +1,4 @@
+from enum import Enum
 from pathlib import Path
 
 from pygame import Color
@@ -14,6 +15,17 @@ SCREEN_HEIGHT = 240
 COLOR_BLACK = Color(0, 0, 0)
 COLOR_WHITE = Color(255, 255, 255)
 COLOR_TRANSPARENCY = Color(255, 0, 255)
+
+
+class Button(Enum):
+    A = "a"
+    B = "b"
+    UP = "up"
+    DOWN = "down"
+    LEFT = "left"
+    RIGHT = "right"
+    START = "start"
+    SELECT = "select"
 
 
 def singleton(cls):

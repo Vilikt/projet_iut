@@ -12,9 +12,9 @@ class ResourcesManager(ResourcesManagerInterface, ABC):
 
         self._resources = {}
 
-        self.__load()
+        self._load()
 
-    def __load(self):
+    def _load(self):
         for root, _, files in walk(self._folder):
             for file in files:
                 # Chemin relatif depuis self._folder

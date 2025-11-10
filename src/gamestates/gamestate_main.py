@@ -1,5 +1,6 @@
 import pygame
 from pygame import Surface, K_RETURN
+from pygame.event import Event
 
 from src.entities.player import Player
 from src.commons import singleton, COLOR_BLACK
@@ -14,7 +15,7 @@ class GameStateMain(GameState):
 
         self.__player = Player(5, 5)
 
-    def handle_events(self):
+    def handle_events(self, event: Event):
         keys_pressed = pygame.key.get_pressed()
 
         if keys_pressed[K_RETURN]:
