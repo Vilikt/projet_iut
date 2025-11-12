@@ -148,10 +148,10 @@ class GameStateOptions(GameState):
                 self.__handle_error_message(f"Already assigned !")
                 return
 
-            setattr(conf, f"button_{self.__button_to_reassign}", key)
-            self.__waiting_for_key = False
-            self.__error_message = None
-            self.__error_timer.reset()
+        setattr(conf, f"button_{self.__button_to_reassign}", key)
+        self.__waiting_for_key = False
+        self.__error_message = None
+        self.__error_timer.reset()
 
     def __handle_error_message(self, message: str):
         self.__error_message = fm.render_text(message, color=Color(255, 0, 0))
