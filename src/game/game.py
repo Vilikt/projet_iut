@@ -23,7 +23,7 @@ class Game(GameLoopInterface):
         self.state_manager = GameStateManager(self)
         self.state_manager.current_state = GameStateName.TITLE
 
-        pygame.display.set_caption("Hello World")
+        pygame.display.set_caption("Super Mario Bros.")
 
     @property
     def running(self) -> bool:
