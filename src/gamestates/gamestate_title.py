@@ -1,5 +1,5 @@
 import pygame.key
-from pygame import K_RETURN, Surface, KEYUP
+from pygame import Surface, KEYUP
 from pygame.event import Event
 
 from src.commons import singleton

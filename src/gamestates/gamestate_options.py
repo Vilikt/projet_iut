@@ -2,7 +2,7 @@ import pygame
 from pygame import Surface, Rect, KEYUP, K_ESCAPE, K_F10, K_KP_MINUS, K_KP_PLUS, Color
 from pygame.event import Event
 
-from src.commons import Button, FONT_SIZE
+from src.commons import Button, FONT_SIZE, singleton
 from src.commons.timer import Timer
 from src.configuration import conf
 from src.gamestates import GameStateName
@@ -51,6 +51,7 @@ CURSOR_POS = {
 NAVIGATION_ORDER = list(CURSOR_POS.keys())
 
 
+@singleton
 class GameStateOptions(GameState):
     def __init__(self, manager: "GameStateManager"):
         super().__init__(manager, GameStateName.OPTIONS)

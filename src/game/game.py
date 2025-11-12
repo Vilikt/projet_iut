@@ -3,13 +3,14 @@ from pygame import Surface
 from pygame.locals import *
 from pygame.time import Clock
 
-from src.commons import COLOR_BLACK, FPS
+from src.commons import COLOR_BLACK, FPS, singleton
 from src.configuration import conf
 from src.game.display import Display
 from src.game.gameloop_interface import GameLoopInterface
 from src.gamestates import GameStateName
 
 
+@singleton
 class Game(GameLoopInterface):
     def __init__(self):
         self.__running = False

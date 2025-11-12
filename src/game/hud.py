@@ -1,6 +1,7 @@
 from pygame import Surface
 from pygame.event import Event
 
+from src.commons import singleton
 from src.commons.timer import Timer
 from src.game.gameloop_interface import GameLoopInterface
 from src.resources_manager import im, fm, am
@@ -16,6 +17,7 @@ class TextPos:
     TIME = (208, 24)
 
 
+@singleton
 class Hud(GameLoopInterface):
     def __init__(self):
         self.__world_name = "1-1"

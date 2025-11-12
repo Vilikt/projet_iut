@@ -1,3 +1,4 @@
+from src.commons import singleton
 from src.gamestates import GameStateName
 from src.gamestates.gamestate import GameState
 from src.gamestates.gamestate_main import GameStateMain
@@ -5,6 +6,7 @@ from src.gamestates.gamestate_options import GameStateOptions
 from src.gamestates.gamestate_title import GameStateTitle
 
 
+@singleton
 class GameStateManager:
     def __init__(self, game: "Game"):
         self.game = game

@@ -1,10 +1,11 @@
 import pygame
 from pygame import Surface
 
-from src.commons import SCREEN_WIDTH, SCREEN_HEIGHT
+from src.commons import SCREEN_WIDTH, SCREEN_HEIGHT, singleton
 from src.configuration import conf
 
 
+@singleton
 class Display:
     def __init__(self, game: "Game"):
         self.__game = game

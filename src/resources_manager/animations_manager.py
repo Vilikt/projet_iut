@@ -1,12 +1,14 @@
 from copy import deepcopy
 from pathlib import Path
 
+from src.commons import singleton
 from src.commons.animation import Animation
 from src.resources_manager.images_manager import ImagesManager
 from src.resources_manager.locals import FOLDER_ANIMATIONS
 from src.resources_manager.resources_manager import ResourcesManager
 
 
+@singleton
 class AnimationsManager(ResourcesManager):
     def __init__(self, im: ImagesManager):
         self.__im = im
