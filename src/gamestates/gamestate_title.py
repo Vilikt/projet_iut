@@ -10,8 +10,6 @@ from src.resources_manager import im, fm
 
 
 class TextPos:
-    COIN_NUMBER = (104, 24)
-    WORLD_NUMBER = (153, 24)
     ONE_PLAYER = (88, 144)
     TWO_PLAYER = (88, 160)
     OPTIONS = (88, 176)
