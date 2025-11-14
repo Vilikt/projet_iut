@@ -1,7 +1,9 @@
 from configparser import ConfigParser
 from pathlib import Path
+
 from pygame.locals import *
-from src.commons import Button
+
+from src.commons import Button, singleton
 
 OPTIONS = "options"
 CONTROLS = "controls"
@@ -25,7 +27,7 @@ CONTROLS_DEFAULT = {
     Button.SELECT: K_RSHIFT
 }
 
-
+@singleton
 class Configuration:
     def __init__(self):
         self.__file_path = Path("config.ini")

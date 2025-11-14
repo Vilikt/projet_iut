@@ -1,10 +1,10 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
 from pygame import Surface
 from pygame.event import Event
 
-from src.game.gameloop_interface import GameLoopInterface
 from src.commons import SCREEN_WIDTH, SCREEN_HEIGHT
+from src.game.gameloop_interface import GameLoopInterface
 
 
 class GameState(GameLoopInterface, ABC):
@@ -14,18 +14,19 @@ class GameState(GameLoopInterface, ABC):
 
         self._game_state_surface = Surface((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-    @abstractmethod
+    @property
+    def game(self):
+        return self.manager.game
+
     def handle_events(self, event: Event):
-        pass
+        self.manager.game.hud.handle_events(event)
 
-    @abstractmethod
     def update_dt(self, delta: float):
-        pass
+        self.game.hud.update_dt(delta)
 
-    @abstractmethod
     def render(self):
-        pass
+        self.game.hud.render()
+        self._game_state_surface.blit(self.game.hud.get_surface(), (0, 0))
 
-    @abstractmethod
     def get_surface(self) -> Surface:
-        pass
+        return self._game_state_surface
