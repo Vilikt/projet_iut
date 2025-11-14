@@ -21,6 +21,8 @@ class GameStateMain(GameState):
         if keys_pressed[K_RETURN]:
             print("pause")
 
+
+
         self.__player.handle_events()
 
     def update_dt(self, delta: float):
