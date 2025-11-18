@@ -11,7 +11,7 @@ from src.resources_manager.resources_manager import ResourcesManager
 @singleton
 class ImagesManager(ResourcesManager):
     def __init__(self):
-        super().__init__(FOLDER_IMAGES)
+        super().__init__(FOLDER_IMAGES, "gif")
 
     def _get_resource_from_file(self, file: Path) -> Surface:
         surface = pygame.image.load(file).convert_alpha()

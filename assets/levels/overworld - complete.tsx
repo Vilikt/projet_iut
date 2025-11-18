@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.10.2" name="overworld - complete" tilewidth="16" tileheight="16" spacing="1" tilecount="153" columns="17">
+<tileset version="1.10" tiledversion="1.10.0" name="overworld - complete" tilewidth="16" tileheight="16" spacing="1" tilecount="153" columns="17">
  <image source="overworld - complete.gif" trans="ff00ff" width="288" height="152"/>
  <tile id="0">
   <properties>
@@ -525,6 +525,11 @@
   <properties>
    <property name="solid" type="bool" value="false"/>
   </properties>
+  <animation>
+   <frame tileid="102" duration="100"/>
+   <frame tileid="103" duration="100"/>
+   <frame tileid="104" duration="100"/>
+  </animation>
  </tile>
  <tile id="103">
   <properties>
