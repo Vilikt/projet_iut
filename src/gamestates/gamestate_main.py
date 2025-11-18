@@ -22,7 +22,6 @@ class GameStateMain(GameState):
         self.__player.add_in_level(self.__level)
         self.game.hud.world_name = self.__level.name
         self.game.hud.time = self.__level.time
-        self.__level.player_sprite.add(self.__player)
         self.__player.x, self.__player.y = self.__level.player_start_point
 
     def handle_events(self, event: Event):
