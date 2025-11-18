@@ -35,3 +35,6 @@ class GameStateManager:
             raise ValueError("Le paramètre doit être une instane de GameStateName")
 
         return getattr(self, f"_{str(state_name.name).lower()}", None)
+
+    def is_current_state(self, name: GameStateName) -> bool:
+        return self.__current_state.name == name

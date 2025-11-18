@@ -14,7 +14,7 @@ DEFAULT_SIZE = FONT_SIZE
 @singleton
 class FontsManager(ResourcesManager):
     def __init__(self):
-        super().__init__(FOLDER_FONTS)
+        super().__init__(FOLDER_FONTS, "ttf")
 
         self.__fixed_fonts = {}
 

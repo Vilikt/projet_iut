@@ -56,6 +56,10 @@ class GameStateTitle(GameState):
             }
             self.manager.current_state = states.get(self.__cursor_pos_index, GameStateName.TITLE)
 
+            # Chargement du premier niveau si nécessaire
+            if self.manager.is_current_state(GameStateName.MAIN):
+                self.manager.get_state(GameStateName.MAIN).change_level("1-1")
+
     def update_dt(self, delta: float):
         super().update_dt(delta)
 

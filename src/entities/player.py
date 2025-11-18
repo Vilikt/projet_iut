@@ -1,5 +1,6 @@
 import pygame
 from pygame import Color, Surface
+from pygame.event import Event
 from pygame.locals import *
 
 from src.entities.entity import Entity
@@ -13,6 +14,8 @@ class Player(Entity, GameLoopInterface):
         image.set_colorkey(Color(255, 0, 255))
         super().__init__(pos_x, pos_y, image)
 
+        self._current_level = None
+
         self.__move_speed = 0
 
     @property
@@ -23,7 +26,12 @@ class Player(Entity, GameLoopInterface):
     def move_speed(self, value: int):
         self.__move_speed = value
 
-    def handle_events(self):
+    def add_in_level(self, level: "Level"):
+        self._current_level = level
+        self._current_level.player_sprite.add(self)
+        self._current_level.center_at = self
+
+    def handle_events(self, event: Event):
         keys_pressed = pygame.key.get_pressed()
 
         if keys_pressed[K_UP]:
