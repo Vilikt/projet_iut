@@ -27,12 +27,11 @@ CONTROLS_DEFAULT = {
     Button.SELECT: K_RSHIFT
 }
 
-
 @singleton
 class Configuration:
     def __init__(self):
+        self.__file_path = Path("config.ini")
         self.__parser = ConfigParser()
-        self.__file_path = Path("./config.ini")
         self.__read_config_file()
 
     @property
@@ -53,6 +52,10 @@ class Configuration:
         self.__parser.set(OPTIONS, OPTION_WINDOW_SIZE, str(value))
         self.__write_config_file()
 
+    @property
+    def all_buttons(self) -> list[int]:
+        return [int(code) for code in self.__parser[CONTROLS].values()]
+
     def __getattr__(self, name: str):
         if name.startswith("button_"):
             button_name = name[7:]
@@ -61,6 +64,7 @@ class Configuration:
                 return self.__parser.getint(CONTROLS, str(button), fallback=CONTROLS_DEFAULT[button])
             except (KeyError, ValueError):
                 raise AttributeError(f"No such button: {name}")
+
         raise AttributeError(f"'Configuration' has no attribute '{name}'")
 
     def __setattr__(self, name: str, value: int):
@@ -84,6 +88,10 @@ class Configuration:
         self.__write_config_file()
 
     def __read_config_file(self):
+        """
+        Charge l'objet ConfigParser avec le contenu du fichier INI.
+        Créé le fichier INI par défaut s'il n'existe pas.
+        """
         if not self.__file_path.exists():
             self.__parser[OPTIONS] = OPTIONS_DEFAULT
             self.__parser[CONTROLS] = {
@@ -98,3 +106,4 @@ class Configuration:
     def __write_config_file(self):
         with open(self.__file_path, 'w') as config_file:
             self.__parser.write(config_file)
+

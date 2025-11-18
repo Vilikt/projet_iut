@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pytmx
 from pygame import Surface, Rect
-from pygame._sprite import Group
 from pygame.event import Event
+from pygame.sprite import Group
 from pytmx import load_pygame
 
 from src.commons import SCREEN_WIDTH, COLOR_BLACK, SCREEN_HEIGHT
@@ -19,7 +19,7 @@ from src.game.gameloop_interface import GameLoopInterface
 
 class Level(GameLoopInterface):
     def __init__(self, map_path: Path):
-        self.__tmx_data = load_pygame(map_path)
+        self.__tmx_data = load_pygame(str(map_path))
         self.__tile_width =  self.__tmx_data.tilewidth
         self.__tile_height =  self.__tmx_data.tileheight
         self.__width = self.__tmx_data.width * self.__tile_width

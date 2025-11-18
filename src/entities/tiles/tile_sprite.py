@@ -28,4 +28,4 @@ class TileSprite(Entity):
         pass
 
     def get_surface(self) -> Surface:
-        pass
+        return self.image

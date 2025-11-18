@@ -17,6 +17,7 @@ COLOR_WHITE = Color(255, 255, 255)
 COLOR_TRANSPARENCY = Color(255, 0, 255)
 
 
+# Boutons
 class Button(Enum):
     A = "a"
     B = "b"

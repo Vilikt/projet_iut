@@ -37,13 +37,10 @@ class Game(GameLoopInterface):
         self.__running = True
 
     def handle_events(self, _):
-        keys_pressed = pygame.key.get_pressed()
-
         for event in pygame.event.get():
-            if event.type == QUIT or keys_pressed[K_ESCAPE]:
+            if event.type == QUIT or (event.type == KEYUP and event.key == K_ESCAPE):
                 self.__running = False
-            elif event.type == KEYUP:
-                if event.key in [K_KP_MINUS, K_KP_PLUS, K_F10]:
+            elif event.type == KEYUP and event.key in [K_KP_MINUS, K_KP_PLUS, K_F10]:
                     if event.key == K_KP_PLUS:
                         conf.window_size += 1
                     elif event.key == K_KP_MINUS and conf.window_size > 1:

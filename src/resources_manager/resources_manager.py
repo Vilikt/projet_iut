@@ -1,5 +1,5 @@
 import sys
-from abc import ABC
+from abc import ABC, abstractmethod
 from os import walk
 from pathlib import Path
 
@@ -7,15 +7,22 @@ from src.resources_manager.resources_manager_interface import ResourcesManagerIn
 
 
 class ResourcesManager(ResourcesManagerInterface, ABC):
-    def __init__(self, folder: Path):
+    def __init__(self, folder: Path, extension: str = ""):
         self._folder = folder
+        self._extension = extension
 
         self._resources = {}
 
         self._load()
 
+    @abstractmethod
+    def _get_resource_from_file(self, file: Path) -> any:
+        pass
+
     def _load(self):
         for root, _, files in walk(self._folder):
+            # On ne prend que les fichiers avec l'extension qu'il faut.
+            files = [f for f in files if f.endswith(f".{self._extension}")]
             for file in files:
                 # Chemin relatif depuis self._folder
                 rel_path = Path(root).relative_to(self._folder)

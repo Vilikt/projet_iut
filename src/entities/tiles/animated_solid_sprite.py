@@ -1,8 +1,8 @@
 from pygame import Surface
 
 from src.commons.animation import Animation
-from src.entities.tiles.solid_sprite import SolidSprite
 from src.entities import EntityState
+from src.entities.tiles.solid_sprite import SolidSprite
 
 
 class AnimatedSolidSprite(SolidSprite):
