@@ -46,6 +46,10 @@ class Entity(Sprite, GameLoopInterface):
         self.__y = value
         self.rect.y = value
 
+    @property
+    def current_animation_image(self) -> Surface:
+        return self.__current_animation.current_image
+
     @abstractmethod
     def handle_events(self, event: Event):
         pass

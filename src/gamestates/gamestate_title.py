@@ -42,6 +42,12 @@ class GameStateTitle(GameState):
         self.__cursor_rect = self.__cursor.get_rect()
         self.__cursor_positions = [pygame.Rect(x, y, *self.__cursor_rect.size) for x, y in CURSOR_POS]
 
+    def on_enter(self):
+        self.manager.get_state(GameStateName.MAIN).player.lives = 3
+
+    def on_quit(self):
+        pass
+
     def handle_events(self, event: Event):
         if event.type != KEYUP:
             return  # Early exit
@@ -50,14 +56,14 @@ class GameStateTitle(GameState):
             self.__cursor_pos_index = (self.__cursor_pos_index + 1) % len(CURSOR_POS)
         elif event.key == conf.button_start:
             states = {
-                0: GameStateName.MAIN,
+                0: GameStateName.INTER_LEVEL,
                 1: GameStateName.MAIN,  # 2 joueurs (TODO: Implémenter GameStateName.TWO_PLAYERS)
                 2: GameStateName.OPTIONS
             }
             self.manager.current_state = states.get(self.__cursor_pos_index, GameStateName.TITLE)
 
             # Chargement du premier niveau si nécessaire
-            if self.manager.is_current_state(GameStateName.MAIN):
+            if self.manager.is_current_state(GameStateName.INTER_LEVEL):
                 self.manager.get_state(GameStateName.MAIN).change_level("1-1")
 
     def update_dt(self, delta: float):

@@ -4,6 +4,7 @@ from os import walk
 from pathlib import Path
 
 from src.resources_manager.resources_manager_interface import ResourcesManagerInterface
+from src.mylogging import logger
 
 
 class ResourcesManager(ResourcesManagerInterface, ABC):
@@ -41,7 +42,7 @@ class ResourcesManager(ResourcesManagerInterface, ABC):
         try:
             res = self._resources[resource_name]
         except KeyError:
-            print(f"La ressource \"{resource_name}\" dans \"{self._folder}\" n'existe pas.")
+            logger.error(f"La ressource \"{resource_name}\" dans \"{self._folder}\" n'existe pas.")
             sys.exit()
 
         return res

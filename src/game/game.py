@@ -4,6 +4,7 @@ from pygame.locals import *
 from pygame.time import Clock
 
 from src.commons import COLOR_BLACK, FPS, singleton
+from src.commons.my_events import MARIO_DEATH
 from src.configuration import conf
 from src.game.display import Display
 from src.game.gameloop_interface import GameLoopInterface

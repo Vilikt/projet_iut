@@ -8,6 +8,7 @@ ROOT = Path("./src/")
 FPS = 60
 
 FONT_SIZE = 8
+TILE_SIZE = 16
 
 SCREEN_WIDTH = 256
 SCREEN_HEIGHT = 240

@@ -144,7 +144,6 @@ class Level(GameLoopInterface):
 
     def update_dt(self, delta):
         self.all_sprites.update(delta)
-        self.player_sprite.update(delta)
 
         if self.center_at is not None:
             self.__shift = self.center_at.x - SCREEN_WIDTH / 2
@@ -159,7 +158,6 @@ class Level(GameLoopInterface):
 
         # Dessine l'ensemble des tuiles du niveau
         self.all_sprites.draw(self.__surface)
-        self.player_sprite.draw(self.__surface)
 
     def get_surface(self) -> Surface:
         """Renvoie une Surface de la taille de l'écran en fonction du décallage du scrolling"""

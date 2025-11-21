@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 from pygame import Surface
 from pygame.event import Event
@@ -17,6 +17,14 @@ class GameState(GameLoopInterface, ABC):
     @property
     def game(self):
         return self.manager.game
+
+    @abstractmethod
+    def on_enter(self):
+        pass
+
+    @abstractmethod
+    def on_quit(self):
+        pass
 
     def handle_events(self, event: Event):
         self.manager.game.hud.handle_events(event)
