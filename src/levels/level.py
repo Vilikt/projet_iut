@@ -35,7 +35,7 @@ class Level(GameLoopInterface):
         self.block_sprites = Group()  # briques
         self.player_sprite = Group()
 
-        self.__animations: dict[tuple[int, int], Animation] = {}
+        self.__animations: dict[int, Animation] = {}
 
         self.__start_point = None
 
