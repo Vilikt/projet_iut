@@ -1,15 +1,20 @@
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
+level = logging.DEBUG
+
+logging.basicConfig(level=level)
 
 logger = logging.getLogger("mario_game")
+logger.propagate = False
 
-# Vider le fichier au démarrage
-with open("mario_game.log", "w"):
-    pass
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(filename)s:%(lineno)d - %(funcName)s - %(message)s')
 
 handler = logging.FileHandler("mario_game.log")
-handler.setLevel(logging.DEBUG)
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(filename)s:%(lineno)d - %(funcName)s - %(message)s')
+handler.setLevel(level)
 handler.setFormatter(formatter)
 logger.addHandler(handler)
+
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(level)
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
