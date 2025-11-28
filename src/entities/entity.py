@@ -9,7 +9,6 @@ from src.entities import EntityState
 from src.game.gameloop_interface import GameLoopInterface
 
 
-
 class Entity(Sprite, GameLoopInterface):
     def __init__(self, pos_x: int, pos_y: int, image: Surface, collision_box: Rect = None, level: "Level" = None):
         super().__init__()

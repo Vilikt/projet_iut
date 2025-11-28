@@ -3,6 +3,8 @@ from pygame import Color, Surface
 from pygame.event import Event
 from pygame.locals import *
 
+from src.commons import SCREEN_HEIGHT, TILE_SIZE
+from src.commons.my_events import post_event, MARIO_DEATH
 from src.entities.entity import Entity
 from src.game.gameloop_interface import GameLoopInterface
 
@@ -14,9 +16,37 @@ class Player(Entity, GameLoopInterface):
         image.set_colorkey(Color(255, 0, 255))
         super().__init__(pos_x, pos_y, image)
 
+        self.__score = 0
+        self.__lives = 0
+        self.__coins = 0
+
         self._current_level = None
 
         self.__move_speed = 0
+
+    @property
+    def lives(self) -> int:
+        return self.__lives
+
+    @lives.setter
+    def lives(self, value: int):
+        self.__lives = value
+
+    @property
+    def score(self) -> int:
+        return self.__score
+
+    @score.setter
+    def score(self, value: int):
+        self.__score = value
+
+    @property
+    def coins(self) -> int:
+        return self.__coins
+
+    @coins.setter
+    def coins(self, value: int):
+        self.__coins = value
 
     @property
     def move_speed(self) -> float:
@@ -45,6 +75,9 @@ class Player(Entity, GameLoopInterface):
 
     def update_dt(self, delta: float):
         self.move_speed = delta * 0.15
+
+        if self.y >= SCREEN_HEIGHT + TILE_SIZE:
+            post_event(MARIO_DEATH)
 
     def render(self):
         pass

@@ -86,6 +86,12 @@ class GameStateOptions(GameState):
     def current_cursor_pos_name(self) -> str:
         return NAVIGATION_ORDER[self.__current_cursor_index]
 
+    def on_enter(self):
+        pass
+
+    def on_quit(self):
+        pass
+
     def handle_events(self, event: Event):
         if event.type != KEYUP:
             return
