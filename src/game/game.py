@@ -55,6 +55,7 @@ class Game(GameLoopInterface):
             self.state_manager.current_state.handle_events(event)
 
     def update_dt(self, delta):
+        delta = min(delta, 50)
         self.state_manager.current_state.update_dt(delta)
 
     def render(self):

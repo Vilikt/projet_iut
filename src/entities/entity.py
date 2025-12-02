@@ -32,21 +32,21 @@ class Entity(Sprite, GameLoopInterface):
 
     @property
     def x(self):
-        return self.__x
+        return self.rect.x
 
     @x.setter
     def x(self, value: int):
-        self.__x = value
         self.rect.x = value
+        self.__center_collision_box_on_image()
 
     @property
     def y(self):
-        return self.__y
+        return self.rect.y
 
     @y.setter
     def y(self, value: int):
-        self.__y = value
         self.rect.y = value
+        self.__center_collision_box_on_image()
 
     @property
     def collision_box_up(self) -> int:
@@ -58,6 +58,42 @@ class Entity(Sprite, GameLoopInterface):
             return
 
         self.__collision_box.top = value
+        self.__center_image_on_collision_box()
+
+    @property
+    def collision_box_down(self) -> int:
+        return self.__collision_box.bottom
+
+    @collision_box_down.setter
+    def collision_box_down(self, value: int):
+        if self.__collision_box is None:
+            return
+
+        self.__collision_box.bottom = value
+        self.__center_image_on_collision_box()
+
+    @property
+    def collision_box_left(self) -> int:
+        return self.__collision_box.left
+
+    @collision_box_left.setter
+    def collision_box_left(self, value: int):
+        if self.__collision_box is None:
+            return
+
+        self.__collision_box.left = value
+        self.__center_image_on_collision_box()
+
+    @property
+    def collision_box_right(self) -> int:
+        return self.__collision_box.right
+
+    @collision_box_right.setter
+    def collision_box_right(self, value: int):
+        if self.__collision_box is None:
+            return
+
+        self.__collision_box.right = value
         self.__center_image_on_collision_box()
 
     @property
@@ -90,6 +126,13 @@ class Entity(Sprite, GameLoopInterface):
 
         self.rect.left = int(self.__collision_box.left - ((self.rect.width - self.__collision_box.width) / 2))
         self.rect.bottom = self.__collision_box.bottom
+
+    def __center_collision_box_on_image(self):
+        if self.__collision_box is None:
+            return
+
+        self.__collision_box.left = int(self.rect.left + ((self.rect.width - self.__collision_box.width) / 2))
+        self.__collision_box.bottom = self.rect.bottom
 
     def get_animation(self, state: EntityStateName) -> Animation | None:
         if state.name not in self._animations.keys():
