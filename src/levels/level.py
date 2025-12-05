@@ -106,10 +106,10 @@ class Level(GameLoopInterface):
                     self.brick_block_sprites.add(sprite)
                     self.collidable_sprites.add(sprite)
                 elif properties["solid"]:
-                    sprite = SolidSprite(x, y, image, properties)
+                    sprite = SolidSprite("default_solid_sprite", x, y, image, properties)
                     self.collidable_sprites.add(sprite)
                 else:
-                    sprite = TileSprite(x, y, image, properties)
+                    sprite = TileSprite("default_tile_sprite", x, y, image, properties)
 
                 self.all_sprites.add(sprite)
 

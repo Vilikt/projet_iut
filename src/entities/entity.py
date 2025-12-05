@@ -12,8 +12,10 @@ from src.mylogging import logger
 
 
 class Entity(Sprite, GameLoopInterface):
-    def __init__(self, pos_x: int, pos_y: int, image: Surface, collision_box: Rect = None, level: "Level" = None):
+    def __init__(self, name: str, pos_x: int, pos_y: int, image: Surface, collision_box: Rect = None, level: "Level" = None):
         super().__init__()
+
+        self.__name = name
 
         self.image = image
         self.rect = self.image.get_rect()
@@ -29,6 +31,10 @@ class Entity(Sprite, GameLoopInterface):
         self.__current_animation: Animation | None = None
 
         self._current_level = level
+
+    @property
+    def name(self) -> str:
+        return self.__name
 
     @property
     def x(self):
@@ -170,7 +176,10 @@ class Entity(Sprite, GameLoopInterface):
 
         for state in self._states:
             if state.name.name == state_name.name:
+                if self.current_state is not None:
+                    self.current_state.on_quit()
                 self.__current_state = state
+                self.__current_state.on_enter()
                 self.current_animation = state.name
                 logger.info(f"Passage vers : {state.name}")
 

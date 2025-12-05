@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
 from src.entities.states import EntityStateName
 from src.mylogging import logger
@@ -24,6 +24,18 @@ class EntityState(ABC):
     @property
     def available_next_states(self) -> list[EntityStateName]:
         return self.__available_next_states
+
+    @abstractmethod
+    def is_in_air(self) -> bool:
+        pass
+
+    @abstractmethod
+    def on_enter(self):
+        pass
+
+    @abstractmethod
+    def on_quit(self):
+        pass
 
     def __is_state_available(self, state_name: EntityStateName) -> bool:
         return state_name in self.__available_next_states

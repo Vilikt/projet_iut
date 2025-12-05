@@ -2,20 +2,30 @@ import pygame.math
 from pygame import Surface, Rect
 from pygame.event import Event
 
-from src.commons import FPS
-from src.entities import DIRECTION_RIGHT
+from src.commons import FPS, RIGHT, get_collision_info, LEFT, UP, DOWN
 from src.entities.entity import Entity
+from src.entities.states import EntityStateName
 from src.mylogging import logger
 
 GRAVITY = 7 / 32  # 0.21875 pixels/frame
 
 
 class AliveEntity(Entity):
-    def __init__(self, pos_x: int, pos_y: int, image: Surface, collision_rect: Rect, level: "Level" = None):
-        super().__init__(pos_x, pos_y, image, collision_rect, level)
+    def __init__(self, name: str, pos_x: int, pos_y: int, image: Surface, collision_rect: Rect, level: "Level" = None):
+        super().__init__(name, pos_x, pos_y, image, collision_rect, level)
 
         self._current_direction = pygame.math.Vector2(0, 0)
-        self._current_side = DIRECTION_RIGHT
+        self._current_side = RIGHT
+
+        self.__can_jump = False
+
+    @property
+    def can_jump(self) -> bool:
+        return self.__can_jump
+
+    @can_jump.setter
+    def can_jump(self, value: bool):
+        self.__can_jump = value
 
     @property
     def is_moving_right(self) -> bool:
@@ -49,6 +59,10 @@ class AliveEntity(Entity):
                 if animation is not None:
                     animation.change_direction()
 
+    @property
+    def is_in_air(self) -> bool:
+        return self.current_state.is_in_air()
+
     def _apply_gravity(self, factor: float):
         self._current_direction.y += GRAVITY * factor
 
@@ -61,26 +75,53 @@ class AliveEntity(Entity):
         self.y += self._current_direction.y * factor
 
         for sprite in self._current_level.collidable_sprites:
-            if sprite.rect.colliderect(self.collision_box.inflate(0, 1)):
-                if self.is_moving_up:
-                    self.collision_box_up = sprite.rect.bottom
-                    # On applique une mini force vers le bas pour éviter de rester collé si Mario heurte quelque chose.
-                    self._current_direction.y = 0.01
-                elif self.is_moving_down:
-                    self.collision_box_down = sprite.rect.top
-                    self._current_direction.y = 0
+            side, overlap_rect = get_collision_info(self.collision_box.inflate(0, 1), sprite.rect)
+            if side is not None:
+                collide_event = False
+
+                if side == UP:
+                    logger.debug(f"Collision du côté haut")
+
+                    if overlap_rect.width <= 4:
+                        if self.x < sprite.x:
+                            self.x -= 1
+                        elif self.x > sprite.x:
+                            self.x += 1
+                    else:
+                        collide_event = True
+                        self.collision_box_up = sprite.rect.bottom
+                        # On applique une mini force vers le bas pour éviter de rester collé si Mario heurte quelque chose.
+                        self._current_direction.y = 0.01
+                elif side == DOWN:
+                    logger.debug(f"Collision du côté bas")
+                    if not self.is_current_state(EntityStateName.ASCENDING):
+                        self.collision_box_down = sprite.rect.top
+                        self._current_direction.y = 0
+
+                if collide_event:
+                    sprite.on_collide(self, side, overlap_rect)
 
         logger.debug("Fin __vertical_movement_collision")
 
     def __horizontal_movement_collision(self, factor: float):
+        logger.debug("Début __horizontal_movement_collision")
         self.x += self._current_direction.x * factor
 
         for sprite in self._current_level.collidable_sprites:
-            if sprite.rect.colliderect(self.collision_box):
-                if self.is_moving_left:
+            side, overlap_rect = get_collision_info(self.collision_box.inflate(1, 0), sprite.rect)
+            if side is not None:
+                if side == LEFT:
+                    logger.debug(f"Collision du côté gauche")
                     self.collision_box_left = sprite.rect.right
-                elif self.is_moving_right:
+                elif side == RIGHT:
+                    logger.debug(f"Collision du côté droit")
                     self.collision_box_right = sprite.rect.left
+
+                self._current_direction.x = 0
+                if side in [LEFT, RIGHT]:
+                    sprite.on_collide(self, side, overlap_rect)
+
+        logger.debug("Fin __horizontal_movement_collision")
 
     def update_dt(self, delta: float):
         logger.debug("Début update AliveEntity")

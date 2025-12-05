@@ -1,4 +1,1 @@
-DIRECTION_LEFT = "left"
-DIRECTION_RIGHT = "right"
-DIRECTION_UP = "up"
-DIRECTION_DOWN = "down"
+

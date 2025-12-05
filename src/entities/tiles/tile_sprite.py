@@ -5,8 +5,8 @@ from src.entities.entity import Entity
 
 
 class TileSprite(Entity):
-    def __init__(self, pos_x: int, pos_y: int, image: Surface, properties):
-        super().__init__(pos_x, pos_y, image)
+    def __init__(self, name: str, pos_x: int, pos_y: int, image: Surface, properties):
+        super().__init__(name, pos_x, pos_y, image)
 
         self.__properties = properties
 
