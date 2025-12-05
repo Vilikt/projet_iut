@@ -18,7 +18,7 @@ class GameStateMain(GameState):
         super().__init__(manager, GameStateName.MAIN)
 
         self.__level = None
-        self.__player = Player(5, 5)
+        self.__player = Player()
 
         self.__paused = False
 
@@ -87,14 +87,12 @@ class GameStateMain(GameState):
             else:
                 self.game.state_manager.current_state = GameStateName.GAME_OVER
         elif not self.__change_state_timer.running:
-            self.__player.update_dt(delta)
             self.__level.update_dt(delta)
 
     def render(self):
+        # Affichage du niveau
         self.__level.render()
         self._game_state_surface = self.__level.get_surface()
-
-        self._game_state_surface.blit(self.__player.image, (self.__player.x, self.__player.y))
 
         super().render()
 

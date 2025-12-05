@@ -5,10 +5,12 @@ from src.entities.entity import Entity
 
 
 class TileSprite(Entity):
-    def __init__(self, pos_x: int, pos_y: int, image: Surface, properties):
-        super().__init__(pos_x, pos_y, image)
+    def __init__(self, name: str, pos_x: int, pos_y: int, image: Surface, properties: dict = None, level: "Level" = None):
+        super().__init__(name, pos_x, pos_y, image, None, level)
 
-        self.__properties = properties
+        self.__properties = {}
+        if properties is not None:
+            self.__properties |= properties
 
     @property
     def properties(self) -> dict:

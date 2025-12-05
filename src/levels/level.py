@@ -99,18 +99,18 @@ class Level(GameLoopInterface):
 
                 if layer.name == "QuestionBlocks":
                     animation = self.__get_animation(x, y, gid, properties)
-                    sprite = QuestionBlockSprite(x, y, animation, properties)
+                    sprite = QuestionBlockSprite(x, y, animation, properties, level=self)
                     self.question_block_sprites.add(sprite)
                     self.collidable_sprites.add(sprite)
                 elif layer.name == "BrickBlocks":
-                    sprite = BrickBlockSprite(x, y, image, properties)
+                    sprite = BrickBlockSprite(x, y, image, properties, level=self)
                     self.brick_block_sprites.add(sprite)
                     self.collidable_sprites.add(sprite)
                 elif properties["solid"]:
-                    sprite = SolidSprite(x, y, image, properties)
+                    sprite = SolidSprite("default_solid_sprite", x, y, image, properties, level=self)
                     self.collidable_sprites.add(sprite)
                 else:
-                    sprite = TileSprite(x, y, image, properties)
+                    sprite = TileSprite("default_tile_sprite", x, y, image, properties, level=self)
 
                 self.all_sprites.add(sprite)
 
@@ -144,6 +144,7 @@ class Level(GameLoopInterface):
 
     def update_dt(self, delta):
         self.all_sprites.update(delta)
+        self.player_sprite.update(delta)
 
         if self.center_at is not None:
             self.__shift = self.center_at.x - SCREEN_WIDTH / 2
@@ -158,6 +159,7 @@ class Level(GameLoopInterface):
 
         # Dessine l'ensemble des tuiles du niveau
         self.all_sprites.draw(self.__surface)
+        self.player_sprite.draw(self.__surface)
 
     def get_surface(self) -> Surface:
         """Renvoie une Surface de la taille de l'écran en fonction du décallage du scrolling"""
