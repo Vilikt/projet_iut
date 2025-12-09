@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.0" class="Level" orientation="orthogonal" renderorder="right-down" width="211" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="8">
+<map version="1.10" tiledversion="1.10.2" class="Level" orientation="orthogonal" renderorder="right-down" width="211" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="14" nextobjectid="43">
  <properties>
   <property name="name" value="1-1"/>
   <property name="time" type="int" value="400"/>
@@ -94,7 +94,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,69,0,0,0,0,0,0,0,0,0,69,0,0,0,0,69,0,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,69,0,0,69,0,0,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,69,0,0,0,0,69,0,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,69,0,0,69,0,0,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -128,5 +128,93 @@
     <property name="contain" value="coin"/>
    </properties>
   </object>
+  <object id="8" type="QuestionBlock" x="384" y="144" width="16" height="16">
+   <properties>
+    <property name="contain" value="coin"/>
+   </properties>
+  </object>
+  <object id="9" type="QuestionBlock" x="368" y="80" width="16" height="16">
+   <properties>
+    <property name="contain" value="coin"/>
+   </properties>
+  </object>
+  <object id="10" name="Item" type="QuestionBlock" x="352" y="144" width="16" height="16">
+   <properties>
+    <property name="contain" value="item"/>
+   </properties>
+  </object>
+  <object id="11" name="Item" type="QuestionBlock" x="1248" y="144" width="16" height="16">
+   <properties>
+    <property name="contain" value="item"/>
+   </properties>
+  </object>
+  <object id="12" type="QuestionBlock" x="1504" y="80" width="16" height="16">
+   <properties>
+    <property name="contain" value="coin"/>
+   </properties>
+  </object>
+  <object id="13" type="QuestionBlock" x="1696" y="144" width="16" height="16">
+   <properties>
+    <property name="contain" value="coin"/>
+   </properties>
+  </object>
+  <object id="14" type="QuestionBlock" x="1744" y="144" width="16" height="16">
+   <properties>
+    <property name="contain" value="coin"/>
+   </properties>
+  </object>
+  <object id="15" name="Item" type="QuestionBlock" x="1744" y="80" width="16" height="16">
+   <properties>
+    <property name="contain" value="item"/>
+   </properties>
+  </object>
+  <object id="16" type="QuestionBlock" x="1792" y="144" width="16" height="16">
+   <properties>
+    <property name="contain" value="coin"/>
+   </properties>
+  </object>
+  <object id="17" type="QuestionBlock" x="2080" y="80" width="16" height="16">
+   <properties>
+    <property name="contain" value="coin"/>
+   </properties>
+  </object>
+  <object id="18" type="QuestionBlock" x="2064" y="80" width="16" height="16">
+   <properties>
+    <property name="contain" value="coin"/>
+   </properties>
+  </object>
+  <object id="19" type="QuestionBlock" x="2720" y="144" width="16" height="16">
+   <properties>
+    <property name="contain" value="coin"/>
+   </properties>
+  </object>
+  <object id="20" name="G1" type="Goomba" x="368" y="192" width="16" height="16"/>
+  <object id="22" name="G2" type="Goomba" x="656" y="192" width="16" height="16"/>
+  <object id="23" name="G3" type="Goomba" x="816" y="192" width="16" height="16"/>
+  <object id="24" name="G4" type="Goomba" x="840" y="192" width="16" height="16"/>
+  <object id="25" name="G5" type="Goomba" x="1280" y="64" width="16" height="16"/>
+  <object id="26" name="G6" type="Goomba" x="1312" y="64" width="16" height="16"/>
+  <object id="28" name="G7" type="Goomba" x="1552" y="192" width="16" height="16"/>
+  <object id="29" name="G8" type="Goomba" x="1576" y="192" width="16" height="16"/>
+  <object id="30" name="Starman" type="QuestionBlock" x="1616" y="144" width="16" height="16">
+   <properties>
+    <property name="contain" value="starman"/>
+   </properties>
+  </object>
+  <object id="31" name="HiddenBlock1" type="HiddenBlock" x="1024" y="128" width="16" height="16">
+   <properties>
+    <property name="contain" value="1up"/>
+   </properties>
+  </object>
+  <object id="32" name="K1" type="Koopa" x="1712" y="192" width="16" height="16"/>
+  <object id="33" name="G9" type="Goomba" x="1824" y="192" width="16" height="16"/>
+  <object id="34" name="G10" type="Goomba" x="1848" y="192" width="16" height="16"/>
+  <object id="35" name="G11" type="Goomba" x="1984" y="192" width="16" height="16"/>
+  <object id="36" name="G12" type="Goomba" x="2008" y="192" width="16" height="16"/>
+  <object id="37" name="G13" type="Goomba" x="2048" y="192" width="16" height="16"/>
+  <object id="38" name="G14" type="Goomba" x="2072" y="192" width="16" height="16"/>
+  <object id="39" name="G15" type="Goomba" x="2784" y="192" width="16" height="16"/>
+  <object id="40" name="G16" type="Goomba" x="2808" y="192" width="16" height="16"/>
+  <object id="42" name="CheckPoint" type="SpawnPoint" x="1320" y="192" width="16" height="16"/>
  </objectgroup>
 </map>
